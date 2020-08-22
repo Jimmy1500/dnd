@@ -2,7 +2,7 @@
     <object id="window" class="GtkWindow">
         <property name="visible">True</property>
         <property name="title">Awesome D&amp;D Dice</property>
-        <property name="border-width">50</property>
+        <property name="border-width">30</property>
         <child>
             <object id="grid" class="GtkGrid">
                 <property name="visible">True</property>
@@ -87,7 +87,6 @@
                         <property name="top-attach">3</property>
                     </packing>
                 </child>
-
             </object>
         </child>
     </object>
