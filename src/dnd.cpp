@@ -90,7 +90,7 @@ int main (int argc, char * argv[])
     gtk_init (&argc, &argv);
 
     builder = gtk_builder_new();
-    if ( !gtk_builder_add_from_file (builder, "../ui/dice.ui", &error) )
+    if ( !gtk_builder_add_from_file (builder, "../ui/dnd.ui", &error) )
     {
         g_printerr ("Error loading file: %s\n", error->message);
         g_clear_error (&error);
@@ -110,7 +110,16 @@ int main (int argc, char * argv[])
 
     gtk_widget_show_all (window);
     gtk_main ();
+    // g_free(entry_dice);
+    // g_free(entry_mod);
+    // g_free(entry_msg);
+    // g_free(entry_sum);
 
+
+    // g_free(error);
+    // g_free(button);
+    // g_free(window);
+    // g_free(builder);
     return 0;
 }
 
