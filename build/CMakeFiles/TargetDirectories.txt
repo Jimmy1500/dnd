@@ -1,5 +1,0 @@
-/home/jimmy/labs/dnd/build/CMakeFiles/rebuild_cache.dir
-/home/jimmy/labs/dnd/build/CMakeFiles/edit_cache.dir
-/home/jimmy/labs/dnd/build/CMakeFiles/memcheck.dir
-/home/jimmy/labs/dnd/build/CMakeFiles/run.dir
-/home/jimmy/labs/dnd/build/CMakeFiles/dnd.dir
