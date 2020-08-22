@@ -1,0 +1,74 @@
+<interface>
+    <object id="window" class="GtkWindow">
+        <property name="visible">True</property>
+        <property name="title">D&amp;D Awesome Dice</property>
+        <property name="border-width">50</property>
+        <child>
+            <object id="grid" class="GtkGrid">
+                <property name="visible">True</property>
+
+                <child>
+                    <object id="label_dice" class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="label">dice:     </property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">0</property>
+                    </packing>
+                </child>
+                <child>
+                    <object id="entry_dice" class="GtkEntry">
+                        <property name="visible">True</property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">0</property>
+                    </packing>
+                </child>
+
+                <child>
+                    <object id="label_mod" class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="label">modifier:     </property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">1</property>
+                    </packing>
+                </child>
+                <child>
+                    <object id="entry_mod" class="GtkEntry">
+                        <property name="visible">True</property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">1</property>
+                    </packing>
+                </child>
+
+                <child>
+                    <object id="button_roll" class="GtkButton">
+                        <property name="visible">True</property>
+                        <property name="label">Roll</property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">2</property>
+                        <property name="width">1</property>
+                    </packing>
+                </child>
+                <child>
+                    <object id="entry_sum" class="GtkEntry">
+                        <property name="visible">True</property>
+                    </object>
+                    <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">2</property>
+                    </packing>
+                </child>
+
+            </object>
+        </child>
+    </object>
+</interface>
