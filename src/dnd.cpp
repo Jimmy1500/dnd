@@ -36,8 +36,10 @@ static int cast (const std::string& roll, long& min, long& max, long& sum, const
 
         std::cout << "-----------" << std::endl;
         std::cout << "DICE: " << roll << std::endl;
-        std::cout << "SUM: " << sum << "[MIN: " << min << ", MAX: " << max << "] " << (mod >= 0 ? "+" : "" ) << mod << " = ";
-        std::cout << total << std::endl;
+        std::cout << "SUM: " << sum
+            << "[MIN: " << min << ", MAX: " << max << "] "
+            << (mod >= 0 ? "+" : "" ) << mod << " = "
+            << total << std::endl;
 
         ss << sum << "[" << min << "," << max << "]" << (mod >= 0 ? "+" : "" ) << mod;
         strcpy( msg, ss.str().c_str() );
@@ -53,7 +55,7 @@ static int cast (const std::string& roll, long& min, long& max, long& sum, const
 extern "C" {
 #endif
 
-#include <gtk/gtk.h>
+#include <gtk-3.0/gtk/gtk.h>
 
 static GtkWidget *entry_dice;
 static GtkWidget *entry_mod;
@@ -88,7 +90,7 @@ int main (int argc, char * argv[])
     gtk_init (&argc, &argv);
 
     builder = gtk_builder_new();
-    if (gtk_builder_add_from_file (builder, "../ui/dice.ui", &error) == 0)
+    if ( !gtk_builder_add_from_file (builder, "../ui/dice.ui", &error) )
     {
         g_printerr ("Error loading file: %s\n", error->message);
         g_clear_error (&error);
