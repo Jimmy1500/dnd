@@ -88,6 +88,8 @@
                     </packing>
                 </child>
             </object>
+            <packing>
+            </packing>
         </child>
     </object>
 </interface>
