@@ -1,7 +1,7 @@
 <interface>
     <object id="window" class="GtkWindow">
         <property name="visible">True</property>
-        <property name="title">D&amp;D Awesome Dice</property>
+        <property name="title">Awesome D&amp;D Dice</property>
         <property name="border-width">50</property>
         <child>
             <object id="grid" class="GtkGrid">
