@@ -44,7 +44,7 @@ static int cast (const std::string& roll, long& min, long& max, long& sum, const
         ss << sum << "[" << min << "," << max << "]" << (mod >= 0 ? "+" : "" ) << mod;
         std::strcpy( msg, ss.str().c_str() );
 
-    } catch (std::invalid_argument const & e) {
+    } catch (const std::invalid_argument & e) {
         std::strcpy( msg, e.what() );
         return 0;
     }
