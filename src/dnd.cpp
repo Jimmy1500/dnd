@@ -14,14 +14,14 @@ static int cast (const std::string& roll, long& min, long& max, long& sum, const
         std::stringstream ss;
         size_t len = roll.length();
 
-        auto ind( roll.find("d") );
-        if (ind == std::string::npos) {
+        auto pos( roll.find("d") );
+        if (pos == std::string::npos) {
             ss << "invalid roll: " << roll;
             throw std::invalid_argument( ss.str() );
         }
 
-        size_t n( std::stoi(roll.substr(0, ind)) );
-        size_t N( std::stoi(roll.substr(ind + 1, len)) );
+        size_t n( std::stoi(roll.substr(0, pos)) );
+        size_t N( std::stoi(roll.substr(pos + 1, len)) );
         std::uniform_int_distribution<long> dice(1, N);
 
         size_t i;
