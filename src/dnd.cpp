@@ -42,13 +42,13 @@ static int cast (const std::string& roll, long& min, long& max, long& sum, const
             << total << std::endl;
 
         ss << sum << "[" << min << "," << max << "]" << (mod >= 0 ? "+" : "" ) << mod;
-        strcpy( msg, ss.str().c_str() );
+        std::strcpy( msg, ss.str().c_str() );
 
     } catch (std::invalid_argument const & e) {
-        strcpy( msg, e.what() );
-        return 1;
+        std::strcpy( msg, e.what() );
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 #ifdef __cplusplus
@@ -66,12 +66,12 @@ static void roll (GtkWidget *widget, gpointer data) {
     char* dice = (char *) gtk_entry_get_text (GTK_ENTRY(entry_dice));
     long mod = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_mod)));
 
-    char msg_buffer[30];
-    char sum_buffer[12];
+    char msg_buffer[45];
+    char sum_buffer[45];
 
-    g_print ("### casting: %s\n", dice);
+    g_print ("### CAST: %s\n", dice);
     long min( 0 ), max( 0 ), sum( 0 ), total( 0 ); 
-    if ( !cast(dice, min, max, sum, mod, total, msg_buffer) ) {
+    if ( cast(dice, min, max, sum, mod, total, msg_buffer) ) {
         snprintf(sum_buffer, sizeof(sum_buffer), "%li", total);
     }
     g_print ("\n");
@@ -110,16 +110,6 @@ int main (int argc, char * argv[])
 
     gtk_widget_show_all (window);
     gtk_main ();
-    // g_free(entry_dice);
-    // g_free(entry_mod);
-    // g_free(entry_msg);
-    // g_free(entry_sum);
-
-
-    // g_free(error);
-    // g_free(button);
-    // g_free(window);
-    // g_free(builder);
     return 0;
 }
 
